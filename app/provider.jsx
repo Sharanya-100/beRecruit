@@ -1,7 +1,7 @@
 "use client";
-import { UserDetailContext } from "@/context/userDetailContext";
+import { UserDetailContext } from "@/context/UserDetailContext";
 import { supabase } from "@/services/supabaseClient";
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useContext } from "react";
 
 function Provider({ children }) {
   const [User, setUser] = useState();
@@ -28,8 +28,8 @@ function Provider({ children }) {
           },
         ]);
         console.log(data);
-        return;
         setUser(data);
+        return;
       }
 
       setUser(Users[0]);
