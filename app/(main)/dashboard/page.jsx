@@ -9,7 +9,7 @@ function Dashboard() {
   const { User } = useUser();
   return (
     <div>
-      <WelcomeContainer />
+      {/* <WelcomeContainer /> */}
       <h2 className="my-3 text-lg font-bold">Dashboard</h2>
       <CreateOptions />
       <LatestInterviewsList />
