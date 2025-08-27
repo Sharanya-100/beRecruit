@@ -12,7 +12,7 @@ import { InterviewType } from '@/services/Constants';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
-function FormContainer({onHandleInputChange}) {
+function FormContainer({onHandleInputChange , GoToNext }) {
     const [interviewType, setInterviewType] = useState([]);
 
     useEffect(()=>{
@@ -61,7 +61,7 @@ function FormContainer({onHandleInputChange}) {
             <SelectValue placeholder="Duration" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="30m">1 minutes</SelectItem>
+            <SelectItem value="1m">1 minutes</SelectItem>
             <SelectItem value="30m">30 minutes</SelectItem>
             <SelectItem value="1h">1 hour</SelectItem>
             <SelectItem value="2h">2 hours</SelectItem>
@@ -83,7 +83,7 @@ function FormContainer({onHandleInputChange}) {
           ))}
         </div>
       </div>
-      <div className="mt-10 flex justify-end">
+      <div className="mt-7 flex justify-end" onClick={() => GoToNext()}>
         <Button>
           Generate Questions <ArrowRight />
         </Button>
