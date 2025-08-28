@@ -6,6 +6,7 @@ import { Loader2Icon, LoaderPinwheel } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { v4 as uuidv4 } from 'uuid';
+import QuestionListContainer from "./QuestionListContainer";
 
 
 function QuestionList({ formData }) {
@@ -16,7 +17,7 @@ function QuestionList({ formData }) {
 
   useEffect(() => {
     if (formData) {
-      //GenerateQuestionList();
+      GenerateQuestionList();
     }
   }, [formData]);
 

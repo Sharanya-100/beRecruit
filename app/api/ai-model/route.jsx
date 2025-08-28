@@ -17,7 +17,7 @@ export async function POST(req) {
     });
 
     const completion = await openai.chat.completions.create({
-      model: "google/gemini-2.5-flash-image-preview:free",
+      model: "deepseek/deepseek-chat-v3-0324:free",
       messages: [{ role: "user", content: FINAL_PROMPT }],
     });
 
