@@ -9,11 +9,11 @@ import { v4 as uuidv4 } from 'uuid';
 import QuestionListContainer from "./QuestionListContainer";
 
 
-function QuestionList({ formData }) {
+function QuestionList({ formData, onCreateLink }) {
   const [loading, setLoading] = useState(true);
   const [questionList, setQuestionList] = useState();
-  const {user}=useUser();
-  const[saveLoading,setSaveLoading]=useState(false);
+  const { user } = useUser();
+  const [saveLoading, setSaveLoading] = useState(false);
 
   useEffect(() => {
     if (formData) {
@@ -41,17 +41,23 @@ function QuestionList({ formData }) {
 
   const onFinish = async () => {
     setSaveLoading(true);
-    const interview_id=uuidv4();
-    
-const { data, error } = await supabase
-  .from('interviews')
-  .insert([
-    { ...formData, questionList: questionList, userEmail: user?.email,interview_id:interview_id },
-  ])
-  .select()
-  setSaveLoading(false);
-  console.log(data);
-          
+    const interview_id = uuidv4();
+
+    const { data, error } = await supabase
+      .from("interviews")
+      .insert([
+        {
+          ...formData,
+          questionList: questionList,
+          userEmail: user?.email,
+          interview_id: interview_id,
+        },
+      ])
+      .select();
+    setSaveLoading(false);
+    //console.log(data);
+
+    onCreateLink(interview_id);
   };
 
   return (
@@ -74,9 +80,10 @@ const { data, error } = await supabase
       )}
 
       <div className="flex justify-end mt-10">
-        <Button onClick={() => onFinish()} disabled={saveLoading} >
+        <Button onClick={() => onFinish()} disabled={saveLoading}>
           {saveLoading && <Loader2Icon className="animate-spin" />}
-          Finish</Button>
+          Create Interview Link & Finish
+        </Button>
       </div>
     </div>
   );

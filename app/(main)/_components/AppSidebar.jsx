@@ -27,6 +27,7 @@ export function AppSidebar() {
           width={350}
           height={100}
           className="w-[300px]"
+          priority
         />
         <Button className="w-full mt-5">
           <Plus />
