@@ -32,6 +32,7 @@ function Interview() {
         .from("interviews")
         .select("jobPosition, jobDescription, duration, type")
         .eq("interview_id", interview_id);
+        
       setInterviewData(interviews[0]);
       setLoading(false);
       if (interviews?.length === 0) {
