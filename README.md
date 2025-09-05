@@ -3,6 +3,14 @@
 <div align="center">
 
 ![beRecruit Logo](./public/logo.png)
+<img width="1915" height="794" alt="image" src="https://github.com/user-attachments/assets/bceb4db8-5474-4448-a751-34a145a1d541" />
+<img width="3692" height="2432" alt="localhost_3000_dashboard_create-interview" src="https://github.com/user-attachments/assets/3182bdae-e5bd-46ea-8dc1-f1fc80d19453" />
+<img width="1918" height="759" alt="image" src="https://github.com/user-attachments/assets/4f86b88a-e8ab-42e6-af1c-40eb2f0d09a1" />
+<img width="3692" height="3178" alt="localhost_3000_dashboard_create-interview (1)" src="https://github.com/user-attachments/assets/8e0869be-f16b-42d8-be43-efde9ddeef97" />
+
+
+
+
 
 _AI-Driven Interview, Hassle-free Hiring_
 
